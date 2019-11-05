@@ -24,10 +24,10 @@ void insertionSort(int* array, int lo, int hi)
 
 void quickSort(int* array, int lo, int hi)
 {
-	int sizeOfSortingPart = hi + 1 - lo;
-	int supportingElement = array[(lo + hi + 1) / 2];
-	int tail = hi;
-	int begin = lo;
+	const int sizeOfSortingPart = hi + 1 - lo;
+	const int supportingElement = array[(lo + hi + 1) / 2];
+	const int tail = hi;
+	const int begin = lo;
 
 	if (sizeOfSortingPart < 2)
 	{
@@ -86,11 +86,11 @@ bool isFound(int* array, int lo, int hi, int number)
 	}
 	else if (number < array[middleElement])
 	{
-		isFound(array, lo, middleElement - 1, number);
+		return isFound(array, lo, middleElement - 1, number);
 	}
 	else if (number > array[middleElement])
 	{
-		isFound(array, middleElement + 1, hi, number);
+		return isFound(array, middleElement + 1, hi, number);
 	}
 }
 
@@ -193,6 +193,7 @@ int main()
 	if (!checkSort(array, n))
 	{
 		printf("Error in array sorting");
+		delete[] array;
 		return -1;
 	}
 	printf("Generated and sorted array of %i elements:\n", n);
