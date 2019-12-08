@@ -20,11 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-<<<<<<< HEAD
-    <ProjectGuid>{7D0F193F-1CE8-41BD-AB4D-85B9F7AD1966}</ProjectGuid>
-=======
-    <ProjectGuid>{E598C684-72A2-4782-8C52-392DB3AAD594}</ProjectGuid>
->>>>>>> 3c52b197cf83faca3878ade6dc81adcc3c7057cb
+    <ProjectGuid>{443EA240-D7B5-4ABD-9064-B0F43655B6C1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Task41</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
