@@ -105,7 +105,13 @@ int main()
 		return -1;
 	}
 
-	FILE* file = fopen("array.txt", "r");
+	FILE* file;
+
+	if ((file = fopen("array.txt", "r")) == nullptr)
+	{
+		printf("file not found");
+		return 0;
+	}
 	int array[1001]{};
 	int arraySize = 0;
 
@@ -114,15 +120,16 @@ int main()
 		arraySize++;
 	}
 
+	fclose(file);
+
 	if (arraySize == 0)
 	{
 		printf("Array is empty");
-		fclose(file);
 		return -1;
 	}
 	printf("Most frequent element is %i\n", finderOfMostFrequentElement(array, arraySize));
 	printf("Sorted array: \n");
 	outputArray(array, arraySize);
 
-	fclose(file);
+	return 0;
 }

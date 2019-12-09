@@ -1,3 +1,5 @@
+#include "quickSort.h"
+
 void swap(int* firstElement, int* secondElement)
 {
 	int tmp = *firstElement;
