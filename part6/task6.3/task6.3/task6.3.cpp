@@ -21,12 +21,12 @@ bool stringCompaisor(char* str1, char* str2)
 bool programTest()
 {
 	const int size = 20;
-	char* infix1 = new char[size];
-	char* postfix1 = new char[size];
-	char* parsInfix1 = new char[size];
-	char* infix2 = new char[size];
-	char* postfix2 = new char[size];
-	char* parsInfix2 = new char[size];
+	char* infix1 = new char[size] {};
+	char* postfix1 = new char[size] {};
+	char* parsInfix1 = new char[size] {};
+	char* infix2 = new char[size] {};
+	char* postfix2 = new char[size] {};
+	char* parsInfix2 = new char[size] {};
 
 	strncpy(infix1, "1+2*3+4", size);
 	strncpy(postfix1, "1 2 3 * + 4 + ", size);

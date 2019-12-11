@@ -2,6 +2,7 @@
 
 struct StackElement;
 struct Stack;
+
 bool isEmpty(Stack* stack);
 Stack* create();
 void push(char value, Stack* stack);
