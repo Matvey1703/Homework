@@ -48,7 +48,7 @@ int main()
 	char string[50] = {};
 
 	printf("Enter the expression: ");
-	gets_s(string);
+	fgets(string, 50, stdin);
 	if (balanceCheck(string))
 	{
 		printf("Parenthesis balance is perfomed");
