@@ -40,7 +40,7 @@ char pop(Stack* stack)
 	return deletedValue;
 }
 
-char headValue(Stack* stack)
+char top(Stack* stack)
 {
 	return stack->head->value;
 }

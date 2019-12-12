@@ -69,7 +69,7 @@ void parser(char* string, char* postfixForm)
 		}
 		else if (string[i] == ')')
 		{
-			while (headValue(operatorStack) != '(')
+			while (top(operatorStack) != '(')
 			{
 				if (isEmpty(operatorStack))
 				{
@@ -84,7 +84,7 @@ void parser(char* string, char* postfixForm)
 		}
 		else if (isOperator(string[i]))
 		{
-			while (!isEmpty(operatorStack) && priority(headValue(operatorStack)) >= priority(string[i]))
+			while (!isEmpty(operatorStack) && priority(top(operatorStack)) >= priority(string[i]))
 			{
 				postfixForm[j] = pop(operatorStack);
 				j++;

@@ -34,7 +34,8 @@ bool programTest()
 	strncpy(infix2, "(3 + 3) * 6 - 12", size);
 	strncpy(postfix2, "3 3 + 6 * 12 - ", size);
 	parser(infix2, parsInfix2);
-	if (!stringCompaisor(postfix1, parsInfix1))
+
+	if (strcmp(postfix1, parsInfix1) != 0)
 	{
 		delete[] postfix1;
 		delete[] infix1;
@@ -44,7 +45,7 @@ bool programTest()
 		delete[] parsInfix2;
 		return false;
 	}
-	if (!stringCompaisor(postfix2, parsInfix2))
+	if (strcmp(postfix2, parsInfix2) != 0)
 	{
 		delete[] postfix1;
 		delete[] infix1;
