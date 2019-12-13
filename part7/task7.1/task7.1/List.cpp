@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #include"list.h"
 
 struct ListElement
@@ -27,14 +29,18 @@ bool deleteElement(int value, List* list)
 	{
 		return false;
 	}
+
 	if (value == list->head->value)
 	{
 		ListElement* oldHead = list->head;
 		list->head = list->head->next;
 		delete oldHead;
+		return true;
 	}
-	ListElement* prev = nullptr;
+
+	ListElement* prev = list->head;
 	ListElement* next = list->head;
+
 	while (next != nullptr && value > next->value)
 	{
 		prev = next;
@@ -45,21 +51,22 @@ bool deleteElement(int value, List* list)
 		return false;
 	}
 	prev->next = next->next;
+
 	delete next;
 	return true;
 }
 
-void addElement(int newValue, List* list)
+bool addElement(int newValue, List* list)
 {
 	if (isEmpty(list))
 	{
 		list->head = new ListElement{ newValue, nullptr };
-		return;
+		return true;
 	}
 	if (newValue < list->head->value)
 	{
 		list->head = new ListElement{ newValue, list->head };
-		return;
+		return true;
 	}
 	ListElement* prev = nullptr;
 	ListElement* next = list->head;
@@ -67,13 +74,14 @@ void addElement(int newValue, List* list)
 	{
 		if (newValue == next->value)
 		{
-			printf("Element is already in the list\n");
-			return;
+			return false;
 		}
 		prev = next;
 		next = next->next;
 	}
 	prev->next = new ListElement{ newValue, next };
+	
+	return true;
 }
 
 void displayList(List* list)
@@ -104,4 +112,37 @@ void deleteList(List* list)
 		}
 	}
 	delete list;
+}
+
+bool checkSort(List* list)
+{
+	ListElement* helpElement = list->head;
+
+	if (!isEmpty(list))
+	{
+		while (helpElement->next != nullptr)
+		{
+			if (helpElement->value > helpElement->next->value)
+			{
+				return false;
+			}
+			helpElement = helpElement->next;
+		}
+	}
+	return true;
+}
+
+bool isInList(List* list, int number)
+{
+	ListElement* helpElement = list->head;
+
+	while (helpElement != nullptr)
+	{
+		if (number == helpElement->value)
+		{
+			return true;
+		}
+		helpElement = helpElement->next;
+	}
+	return false;
 }
