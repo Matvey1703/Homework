@@ -1,6 +1,5 @@
 #pragma once
 
-struct StackElement;
 struct Stack;
 
 // Check if stack is empty. 
