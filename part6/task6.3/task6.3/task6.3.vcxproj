@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{42442223-EB59-436F-A20C-153A47C99724}</ProjectGuid>
+    <ProjectGuid>{32DEBD19-6BA8-49D3-92C1-AA932D4095B1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>task62</RootNamespace>
+    <RootNamespace>task63</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,7 +88,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
@@ -151,13 +151,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="balanceSheck.cpp" />
+    <ClCompile Include="parser.cpp" />
     <ClCompile Include="stack.cpp" />
-    <ClCompile Include="task6.2.cpp" />
+    <ClCompile Include="task6.3.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="parser.h" />
     <ClInclude Include="stack.h" />
-    <ClInclude Include="balanceCheck.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

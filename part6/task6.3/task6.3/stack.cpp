@@ -2,7 +2,7 @@
 
 struct StackElement
 {
-	int value = 0;
+	char value = 0;
 	StackElement* next = nullptr;
 };
 
@@ -21,23 +21,28 @@ Stack* create()
 	return new Stack;
 }
 
-void push(int value, Stack* stack)
+void push(char value, Stack* stack)
 {
 	stack->head = new StackElement{ value, stack->head };
 }
 
-int pop(Stack* stack)
+char pop(Stack* stack)
 {
 	if (isEmpty(stack))
 	{
 		return 0;
 	}
-	int deletedValue = stack->head->value;
+	char deletedValue = stack->head->value;
 	StackElement* newHead = stack->head->next;
 
 	delete stack->head;
 	stack->head = newHead;
 	return deletedValue;
+}
+
+char top(Stack* stack)
+{
+	return stack->head->value;
 }
 
 void deleteStack(Stack* stack)
