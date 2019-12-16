@@ -7,7 +7,7 @@ void readFromFile(char* fileName, char* string)
 {
 	FILE* file = fopen(fileName, "a+");
 	int i = 0;
-	char symbol = ' ';
+	int symbol = ' ';
 
 	while (!feof(file) && (symbol = fgetc(file)) != EOF)
 	{
@@ -16,7 +16,6 @@ void readFromFile(char* fileName, char* string)
 
 	fclose(file);
 }
-
 
 bool arrayComparison(int* array1, int* array2, int arraySize)
 {
@@ -51,7 +50,7 @@ bool test()
 		finder(subString2, string) == 24 ||
 		finder(subString3, string) == 39;
 
-	return  prefixFunctionTest && readFromFile;
+	return prefixFunctionTest && finderTest;
 }
 
 int main()

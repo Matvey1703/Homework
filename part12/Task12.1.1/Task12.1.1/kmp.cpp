@@ -4,7 +4,7 @@
 
 void prefixFunction(char* string, int* pi)
 {
-	int stringSize = strlen(string);
+	const int stringSize = strlen(string);
 	int maxPrefix = 0; // Maximum length of matching prefix and postfix.
 	int stringIndex = 1;
 
@@ -41,8 +41,6 @@ int finder(char* subString, char* string)
 	int subStringIndex = 0;
 	int* pi = new int[subStringSize] {};
 
-
-
 	prefixFunction(subString, pi);
 
 	while (stringIndex <= stringSize - subStringSize)
@@ -51,6 +49,7 @@ int finder(char* subString, char* string)
 		{
 			if (subStringIndex == subStringSize - 1)
 			{
+				delete[] pi;
 				return stringIndex - subStringSize + 1;
 			}
 			stringIndex++;
