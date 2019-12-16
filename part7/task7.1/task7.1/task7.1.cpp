@@ -46,7 +46,7 @@ int main()
 {
 	if (!test())
 	{
-		printf("program work incorrectly");
+		printf("program works incorrectly");
 		return -1;
 	}
 
@@ -69,7 +69,7 @@ int main()
 			break;
 		case '1':
 			printf("input new value: ");
-			scanf_s("%i", &value);
+			scanf("%i", &value);
 			if (!addElement(value, list))
 			{
 				printf("Element is already in the list\n");
@@ -77,7 +77,7 @@ int main()
 			break;
 		case '2':
 			printf("input value to delete: ");
-			scanf_s("%i", &value);
+			scanf("%i", &value);
 			printf(deleteElement(value, list) ? "element %i is successfully deleted\n" : 
 				                                "no element for deletion\n", value);
 			break;

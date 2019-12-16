@@ -1,6 +1,5 @@
 #pragma once
 
-struct ListElement;
 struct List;
 
 // Check if list is empty. 
