@@ -4,6 +4,11 @@
 
 int counter(int m, int n)
 {
+	if (n == 0 || m == 0)
+	{
+		return 0;
+	}
+
 	List* list = create();
 
 	for (int i = n; i >= 1; i--)
@@ -11,11 +16,9 @@ int counter(int m, int n)
 		addElement(i, list);
 	}
 
-	ListElement* helpElement = nullptr;
-	listHead(&helpElement, list);
+	ListElement* helpElement = listHead(list);
 	
-	ListElement* next = nullptr;
-	next = helpElement;
+	ListElement* next = helpElement;
 	shiftNext(&next);
 
 	while (!listElements—omparison(&next, &helpElement))
@@ -30,6 +33,7 @@ int counter(int m, int n)
 		next = helpElement;
 		if (!deleteElement(&elementToDelete, list))
 		{
+			deleteList(list);
 			return -1;
 		}
 		shiftNext(&next);

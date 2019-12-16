@@ -18,14 +18,11 @@ bool deleteElement(ListElement** elementToDelete, List* list);
 // Add element in head of list.
 void addElement(int newValue, List* list);
 
-// Print list.
-void displayList(List* list);
-
 // Delete list.
 void deleteList(List* list);
 
-// Pass the pointer on head of list to listElement.
-void listHead(ListElement** listElement, List* list);
+// Return the pointer on head of list.
+ListElement* listHead(List* list);
 
 // Check if element1 and element2 are equel.
 bool listElements—omparison(ListElement** element1, ListElement** element2);

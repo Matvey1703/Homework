@@ -81,24 +81,7 @@ void addElement(int newValue, List* list)
 	{
 		list->head = new ListElement{ newValue, list->head };
 		list->tail->next = list->head;
-
 	}
-}
-
-void displayList(List* list)
-{
-	if (isEmpty(list))
-	{
-		printf("empty list\n");
-		return;
-	}
-	ListElement* helpElement = list->head;
-	while (helpElement != nullptr)
-	{
-		printf("%i ", helpElement->value);
-		helpElement = helpElement->next;
-	}
-	printf("\n");
 }
 
 void deleteList(List* list)
@@ -117,9 +100,9 @@ void deleteList(List* list)
 	delete list;
 }
 
-void listHead(ListElement** listElement, List* list)
+ListElement* listHead(List* list)
 {
-	*listElement = list->head;
+	return list->head;
 }
 
 bool listElements—omparison(ListElement** element1, ListElement** element2)

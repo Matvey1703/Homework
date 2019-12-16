@@ -11,7 +11,7 @@ int main()
 {
 	if (!test())
 	{
-		printf("Prodramm work incorrectly");
+		printf("Program works incorrectly");
 		return -1;
 	}
 
