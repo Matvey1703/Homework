@@ -27,7 +27,6 @@ bool isMMGroup(char* string)
 			{
 				state = 2;
 			}
-			
 			else
 			{
 				return false;
@@ -74,7 +73,7 @@ bool isMMGroup(char* string)
 		case 5:
 			if (string[i] == '-')
 			{
-			state = 6;
+				state = 6;
 			}
 			else
 			{
@@ -94,7 +93,7 @@ bool isMMGroup(char* string)
 		case 7:
 			return string[i] == 'm';
 		}
-	    i++;
+		i++;
 	}
 }
 
