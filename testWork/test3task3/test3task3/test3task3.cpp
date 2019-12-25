@@ -92,17 +92,9 @@ bool isMMGroup(char* string)
 			}
 			break;
 		case 7:
-			if (string[i] == 'm')
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-			break;
+			return string[i] == 'm';
 		}
-		i++;
+	    i++;
 	}
 }
 
