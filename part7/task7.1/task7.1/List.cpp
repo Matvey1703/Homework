@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 
 #include"list.h"
@@ -80,7 +81,7 @@ bool addElement(int newValue, List* list)
 		next = next->next;
 	}
 	prev->next = new ListElement{ newValue, next };
-	
+
 	return true;
 }
 
